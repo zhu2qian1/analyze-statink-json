@@ -1,6 +1,7 @@
 import json
 from DictTransferrer import DictTransferrer
 from Constants import Constants
+from pprint import pprint
 
 
 def main():
@@ -11,7 +12,7 @@ def main():
     ids = find_most_golden_eggs(extracted_list)
     records = [rec for rec in extracted_list if rec["id"] in ids]
     for record in records:
-        print(record)
+        pprint(record, indent=1, width=140, compact=True)
         print()
 
 
