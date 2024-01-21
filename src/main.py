@@ -1,5 +1,4 @@
 import json
-import yaml
 from DictTransferrer import DictTransferrer
 from Constants import Constants
 
