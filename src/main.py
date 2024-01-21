@@ -8,7 +8,7 @@ def main():
     stats = load_stat()
 
     # TODO
-    extracted_list = [extract_info(d) for d in ls]
+    extracted_list = [extract_wkeys(stat) for stat in stats]
     ids = find_most_golden_eggs(extracted_list)
     records = [rec for rec in extracted_list if rec["id"] in ids]
     for record in records:
@@ -30,7 +30,7 @@ def find_most_golden_eggs(list: list[dict]):
     return ids
 
 
-def extract_info(src_dict) -> dict:
+def extract_wkeys(src_dict) -> dict:
     ret = {}
     df = DictTransferrer(ret, src_dict)
     df.transfer(
