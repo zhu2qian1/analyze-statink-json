@@ -1,6 +1,6 @@
 class DictTransferrer:
-    def __init__(self, dist, src):
-        self.dist = dist
+    def __init__(self, dest, src):
+        self.dist = dest
         self.src = src
 
     def transfer(self, *keys):
