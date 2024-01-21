@@ -5,9 +5,7 @@ from Constants import Constants
 
 
 def main():
-    ls = None
-    with open(Constants.json_path, "r") as f:
-        ls = load_stat(f)
+    stats = load_stat()
 
     # TODO
     extracted_list = [extract_info(d) for d in ls]
@@ -50,8 +48,11 @@ def extract_info(src_dict) -> dict:
     return ret
 
 
-def load_stat(f) -> list | dict:
-    return json.load(f)
+def load_stat() -> list | dict:
+    ls = None
+    with open(Constants.json_path, "r") as f:
+        ls = json.load(f)
+    return ls
 
 
 if __name__ == "__main__":
